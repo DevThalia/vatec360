@@ -1,0 +1,267 @@
+/* RESET Y BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #222;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #1a6fd4;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: #1a6fd4;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 24px;
+    background: #f7f9fc;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #1a6fd4;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+    max-width: 500px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background: #1a6fd4;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background: #155bb5;
+}
+
+/* SERVICIOS */
+.servicios {
+    padding: 64px 40px;
+}
+
+.seccion-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.seccion-label {
+    color: #1a6fd4;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.seccion-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.seccion-header p {
+    color: #555;
+    font-size: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.servicio-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.servicio-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.servicio-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* PORTFOLIO */
+.portfolio {
+    padding: 64px 40px;
+    background: #f7f9fc;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    background: #fff;
+}
+
+.portfolio-img {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.portfolio-info {
+    padding: 14px 16px;
+}
+
+.portfolio-info strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.portfolio-info p {
+    font-size: 13px;
+    color: #555;
+}
+
+/* CONTACTO */
+.contacto {
+    padding: 64px 40px;
+}
+
+.contacto-form {
+    max-width: 540px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 13px;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #222;
+    background: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1a6fd4;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contacto-form .btn-primary {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* FOOTER */
+.footer {
+    padding: 32px 40px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+}
+
+.footer p {
+    font-size: 13px;
+    color: #555;
+}

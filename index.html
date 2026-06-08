@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vatec360 - Diseño web para pequeños comercios</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div class="logo">VATEC<span>360</span></div>
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero">
+            <h1>Diseñamos, creamos y <span>lanzamos tu web</span></h1>
+            <p>Webs profesionales para pequeños comercios. Rápidas, bonitas y
+                pensadas para que tus clientes te encuentren.</p>
+            <a href="#contacto" class="btn-primary">Pide tu presupuesto</a>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section class="servicios" id="servicios">
+            <div class="seccion-header">
+                <p class="seccion-label">Servicios</p>
+                <h2>¿Qué puedo hacer por tu negocio?</h2>
+                <p>Desde una web sencilla hasta una tienda online completa, me
+                    adapto a lo que necesitas.</p>
+            </div>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <h3>🌐 Web corporativa</h3>
+                    <p>Presencia online profesional para tu negocio desde el
+                        primer día.</p>
+                </div>
+                <div class="servicio-card">
+                    <h3>🛒 Tienda online</h3>
+                    <p>Vende tus productos por internet con una tienda fácil de
+                        gestionar.</p>
+                </div>
+                <div class="servicio-card">
+                    <h3>🎨 Diseño a medida</h3>
+                    <p>Diseño único que refleja la personalidad de tu marca.</p>
+                </div>
+                <div class="servicio-card">
+                    <h3>📱 Móvil primero</h3>
+                    <p>Todas las webs funcionan perfectamente en cualquier
+                        dispositivo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO -->
+        <section class="portfolio" id="portfolio">
+            <div class="seccion-header">
+                <p class="seccion-label">Portfolio</p>
+                <h2>Algunos trabajos</h2>
+                <p>Ejemplos de webs creadas para clientes reales.</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img"
+                        style="background: #1a6fd4;">Peluquería Marta</div>
+                    <div class="portfolio-info">
+                        <strong>Peluquería Marta</strong>
+                        <p>Web con reservas online</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img"
+                        style="background: #0f6e56;">Cafetería El Rincón</div>
+                    <div class="portfolio-info">
+                        <strong>Cafetería El Rincón</strong>
+                        <p>Carta digital + contacto</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img"
+                        style="background: #533ab7;">Fontanería Sánchez</div>
+                    <div class="portfolio-info">
+                        <strong>Fontanería Sánchez</strong>
+                        <p>Web corporativa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="contacto" id="contacto">
+            <div class="seccion-header">
+                <p class="seccion-label">Contacto</p>
+                <h2>¿Hablamos?</h2>
+                <p>Cuéntame qué necesitas y te preparo un presupuesto sin
+                    compromiso.</p>
+            </div>
+            <form class="contacto-form" name="contacto" method="POST"
+                data-netlify="true"> 
+                <input type="hidden" name="form-name" value="contacto" />
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" placeholder="Tu nombre" />
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="text" placeholder="+34 ..." />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="tu@email.com" />
+                </div>
+                <div class="form-group">
+                    <label>¿Qué necesitas?</label>
+                    <select>
+                        <option>Web corporativa</option>
+                        <option>Tienda online</option>
+                        <option>Rediseño</option>
+                        <option>Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Cuéntame más</label>
+                    <textarea
+                        placeholder="Descripción de tu negocio y lo que buscas..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Enviar mensaje
+                    →</button>
+            </form>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="logo">VATEC<span>360</span></div>
+            <p>+34 614 454 587</p>
+            <p>El latido digital de tu negocio · Barcelona</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
