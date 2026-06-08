@@ -4,19 +4,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const formulario = document.querySelector(".contacto-form");
 
   // MENÚ HAMBURGUESA
-    const menuBtn = document.getElementById('menu-btn')
-    const navLinks = document.getElementById('nav-links')
+  const menuBtn = document.getElementById("menu-btn");
+  const navLinks = document.getElementById("nav-links");
 
-    menuBtn.addEventListener('click', function() {
-        navLinks.classList.toggle('abierto')
-    })
+  menuBtn.addEventListener("click", function () {
+    navLinks.classList.toggle("abierto");
+  });
 
-    // Cerrar menú al pulsar un enlace
-    navLinks.querySelectorAll('a').forEach(function(enlace) {
-        enlace.addEventListener('click', function() {
-            navLinks.classList.remove('abierto')
-        })
-    })
+  // Cerrar menú al pulsar un enlace
+  navLinks.querySelectorAll("a").forEach(function (enlace) {
+    enlace.addEventListener("click", function () {
+      navLinks.classList.remove("abierto");
+    });
+  });
 
   // Cuando alguien envíe el formulario...
   formulario.addEventListener("submit", function (e) {
@@ -24,38 +24,60 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
 
     // VALIDACIÓN
-        let valido = true
+    let valido = true;
 
-        // Limpiar errores anteriores
-        formulario.querySelectorAll('.error').forEach(el => el.classList.remove('error'))
-        formulario.querySelectorAll('.mensaje-error').forEach(el => el.remove())
+    // Limpiar errores anteriores
+    formulario
+      .querySelectorAll(".error")
+      .forEach((el) => el.classList.remove("error"));
+    formulario.querySelectorAll(".mensaje-error").forEach((el) => el.remove());
 
-        // Comprobar campos vacíos
-        formulario.querySelectorAll('input, textarea, select').forEach(function(campo) {
-            if (campo.type === 'hidden') return
-            if (campo.value.trim() === '') {
-                campo.classList.add('error')
-                const msg = document.createElement('p')
-                msg.classList.add('mensaje-error')
-                msg.textContent = 'Este campo es obligatorio'
-                campo.parentNode.appendChild(msg)
-                valido = false
-            }
-        })
+    // Función para mostrar error
+    function mostrarError(campo, mensaje) {
+      campo.classList.add("error");
+      const msg = document.createElement("p");
+      msg.classList.add("mensaje-error");
+      msg.textContent = mensaje;
+      campo.parentNode.appendChild(msg);
+      valido = false;
+    }
 
-        // Comprobar formato email
-        const email = formulario.querySelector('input[type="email"]')
-        if (email && email.value && !email.value.includes('@')) {
-            email.classList.add('error')
-            const msg = document.createElement('p')
-            msg.classList.add('mensaje-error')
-            msg.textContent = 'Introduce un email válido'
-            email.parentNode.appendChild(msg)
-            valido = false
-        }
+    // Nombre — solo letras y espacios, mínimo 3 caracteres
+    const nombre = formulario.querySelector('input[placeholder="Tu nombre"]');
+    if (nombre.value.trim() === "") {
+      mostrarError(nombre, "El nombre es obligatorio");
+    } else if (nombre.value.trim().length < 3) {
+      mostrarError(nombre, "El nombre debe tener al menos 3 caracteres");
+    } else if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre.value.trim())) {
+      mostrarError(nombre, "El nombre solo puede contener letras");
+    }
 
-        // Si hay errores, parar aquí
-        if (!valido) return
+    // Teléfono — solo números, mínimo 9 dígitos
+    const telefono = formulario.querySelector('input[placeholder="+34 ..."]');
+    if (telefono.value.trim() === "") {
+      mostrarError(telefono, "El teléfono es obligatorio");
+    } else if (!/^[+\d\s]{9,15}$/.test(telefono.value.trim())) {
+      mostrarError(telefono, "Introduce un teléfono válido");
+    }
+
+    // Email — formato correcto
+    const email = formulario.querySelector('input[type="email"]');
+    if (email.value.trim() === "") {
+      mostrarError(email, "El email es obligatorio");
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+      mostrarError(email, "Introduce un email válido");
+    }
+
+    // Textarea — mínimo 10 caracteres
+    const textarea = formulario.querySelector("textarea");
+    if (textarea.value.trim() === "") {
+      mostrarError(textarea, "Cuéntame algo sobre tu negocio");
+    } else if (textarea.value.trim().length < 10) {
+      mostrarError(textarea, "Escribe al menos 10 caracteres");
+    }
+
+    // Si hay errores, parar aquí
+    if (!valido) return;
 
     // Enviamos los datos a Netlify manualmente
     const datos = new FormData(formulario);
@@ -82,18 +104,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ANIMACIONES AL HACER SCROLL
-    const elementos = document.querySelectorAll('.servicio-card, .portfolio-item, .seccion-header')
+  const elementos = document.querySelectorAll(
+    ".servicio-card, .portfolio-item, .seccion-header",
+  );
 
-    const observador = new IntersectionObserver(function(entradas) {
-        entradas.forEach(function(entrada) {
-            if (entrada.isIntersecting) {
-                entrada.target.classList.add('visible')
-            }
-        })
-    }, { threshold: 0.1 })
+  const observador = new IntersectionObserver(
+    function (entradas) {
+      entradas.forEach(function (entrada) {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
 
-    elementos.forEach(function(el) {
-        el.classList.add('aparecer')
-        observador.observe(el)
-    })
+  elementos.forEach(function (el) {
+    el.classList.add("aparecer");
+    observador.observe(el);
+  });
 });
