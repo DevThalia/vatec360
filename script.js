@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
       navPortfolio: "Portfolio",
       navContacto: "Contact",
       navCta: "Let's talk →",
-      heroTag: "Web design · Arround the world",
+      heroTag: "Web design · Around the world",
       heroLinea1: "We design.",
       heroLinea2: "We create.",
       heroLinea3: "We launch.",
