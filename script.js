@@ -46,4 +46,20 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Ha habido un error, inténtalo de nuevo.");
       });
   });
+
+  // ANIMACIONES AL HACER SCROLL
+    const elementos = document.querySelectorAll('.servicio-card, .portfolio-item, .seccion-header')
+
+    const observador = new IntersectionObserver(function(entradas) {
+        entradas.forEach(function(entrada) {
+            if (entrada.isIntersecting) {
+                entrada.target.classList.add('visible')
+            }
+        })
+    }, { threshold: 0.1 })
+
+    elementos.forEach(function(el) {
+        el.classList.add('aparecer')
+        observador.observe(el)
+    })
 });
