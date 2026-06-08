@@ -113,6 +113,12 @@ document.addEventListener("DOMContentLoaded", function () {
         mostrarError(textarea, "Escribe al menos 10 caracteres");
       }
 
+      const rgpd = formulario.querySelector('#rgpd-check');
+      if (!rgpd.checked) {
+        mostrarError(rgpd, "Debes aceptar la política de privacidad");
+        valido = false;
+      }
+
       if (!valido) return;
 
       const datos = new FormData(formulario);
@@ -127,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <div class="exito-icono">✉️</div>
               <h3>¡Mensaje recibido!</h3>
               <p>Gracias por contactar con Vatec360.<br>Te respondo en menos de 24 horas.</p>
-              <a href="https://vatec360.netlify.app" class="btn-main">Volver al inicio <span>↗</span></a>
+              <a href="${window.location.origin}" class="btn-main">Volver al inicio <span>↗</span></a>
             </div>
           `;
         })
@@ -160,6 +166,33 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ================================
+  // MODAL POLÍTICA DE PRIVACIDAD
+  // ================================
+  const modalOverlay = document.getElementById("modal-privacidad");
+  const btnPrivacidad = document.getElementById("btn-privacidad");
+  const btnCerrar = document.getElementById("modal-cerrar");
+
+  if (btnPrivacidad && modalOverlay) {
+    btnPrivacidad.addEventListener("click", function () {
+      modalOverlay.classList.add("activo");
+      document.body.style.overflow = "hidden";
+    });
+
+    btnCerrar.addEventListener("click", cerrarModal);
+    modalOverlay.addEventListener("click", function (e) {
+      if (e.target === modalOverlay) cerrarModal();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") cerrarModal();
+    });
+
+    function cerrarModal() {
+      modalOverlay.classList.remove("activo");
+      document.body.style.overflow = "";
+    }
+  }
+
+  // ================================
   // SELECTOR DE IDIOMA
   // ================================
   const traducciones = {
@@ -168,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
       navPortfolio: "Portfolio",
       navContacto: "Contacto",
       navCta: "Hablemos →",
-      heroTag: "Diseño web · Barcelona",
+      heroTag: "Diseño web · En cualquier parte del mundo",
       heroLinea1: "Diseñamos.",
       heroLinea2: "Creamos.",
       heroLinea3: "Lanzamos.",
@@ -196,7 +229,6 @@ document.addEventListener("DOMContentLoaded", function () {
       stat3: "Soporte incluido",
       portfolioLabel: "Portfolio",
       portfolioH2: "Algunos <em>trabajos</em>",
-      portfolioP: "Ejemplos de webs creadas para clientes reales.",
       contactoLabel: "Contacto",
       contactoH2: "¿Hablamos?<br><em>Sin compromiso.</em>",
       contactoP:
@@ -207,7 +239,10 @@ document.addEventListener("DOMContentLoaded", function () {
       formServicio: "¿Qué necesitas?",
       formMensaje: "Cuéntame más",
       formBtn: "Enviar mensaje <span>↗</span>",
+      formRgpd: 'He leído y acepto la <button type="button" class="link-privacidad" id="btn-privacidad">política de privacidad</button>',
+      selectOpciones: ["Web corporativa", "Tienda online", "Rediseño", "Otro"],
       footerClaim: "El latido digital de tu negocio",
+      modalTitulo: "Política de Privacidad",
     },
     en: {
       navServicios: "Services",
@@ -239,7 +274,6 @@ document.addEventListener("DOMContentLoaded", function () {
       stat3: "Support included",
       portfolioLabel: "Portfolio",
       portfolioH2: "Some <em>projects</em>",
-      portfolioP: "Examples of websites created for real clients.",
       contactoLabel: "Contact",
       contactoH2: "Let's talk?<br><em>No strings attached.</em>",
       contactoP:
@@ -250,14 +284,17 @@ document.addEventListener("DOMContentLoaded", function () {
       formServicio: "What do you need?",
       formMensaje: "Tell me more",
       formBtn: "Send message <span>↗</span>",
+      formRgpd: 'I have read and accept the <button type="button" class="link-privacidad" id="btn-privacidad">privacy policy</button>',
+      selectOpciones: ["Corporate website", "Online store", "Redesign", "Other"],
       footerClaim: "The digital heartbeat of your business",
+      modalTitulo: "Privacy Policy",
     },
     fr: {
       navServicios: "Services",
       navPortfolio: "Portfolio",
       navContacto: "Contact",
       navCta: "Parlons-en →",
-      heroTag: "Création web · Barcelone",
+      heroTag: "Création web · Partout dans le monde",
       heroLinea1: "On conçoit.",
       heroLinea2: "On crée.",
       heroLinea3: "On lance.",
@@ -285,7 +322,6 @@ document.addEventListener("DOMContentLoaded", function () {
       stat3: "Support inclus",
       portfolioLabel: "Portfolio",
       portfolioH2: "Quelques <em>projets</em>",
-      portfolioP: "Exemples de sites créés pour de vrais clients.",
       contactoLabel: "Contact",
       contactoH2: "On en parle?<br><em>Sans engagement.</em>",
       contactoP:
@@ -296,12 +332,19 @@ document.addEventListener("DOMContentLoaded", function () {
       formServicio: "De quoi avez-vous besoin?",
       formMensaje: "Dites-m'en plus",
       formBtn: "Envoyer le message <span>↗</span>",
+      formRgpd: 'J\'ai lu et j\'accepte la <button type="button" class="link-privacidad" id="btn-privacidad">politique de confidentialité</button>',
+      selectOpciones: ["Site vitrine", "Boutique en ligne", "Refonte", "Autre"],
       footerClaim: "Le battement digital de votre entreprise",
+      modalTitulo: "Politique de confidentialité",
     },
   };
 
   function aplicarIdioma(lang) {
     const t = traducciones[lang];
+
+    // Actualizar atributo lang del documento
+    document.getElementById("html-root").setAttribute("lang", lang);
+
     const links = document.querySelectorAll("#nav-links li a:not(.nav-cta)");
     links[0].textContent = t.navServicios;
     links[1].textContent = t.navPortfolio;
@@ -343,12 +386,39 @@ document.addEventListener("DOMContentLoaded", function () {
     statLabels[0].textContent = t.stat1;
     statLabels[1].textContent = t.stat2;
     statLabels[2].textContent = t.stat3;
-    const labels = document.querySelectorAll(".form-group label");
+    const labels = document.querySelectorAll(".form-group label:not(.rgpd-label)");
     labels[0].textContent = t.formNombre;
     labels[1].textContent = t.formTelefono;
     labels[2].textContent = t.formEmail;
     labels[3].textContent = t.formServicio;
     labels[4].textContent = t.formMensaje;
+
+    // Traducir opciones del select
+    const select = document.getElementById("select-servicio");
+    if (select) {
+      const opciones = select.querySelectorAll("option");
+      t.selectOpciones.forEach(function (texto, i) {
+        if (opciones[i]) opciones[i].textContent = texto;
+      });
+    }
+
+    // Traducir texto RGPD y reconectar listener del modal
+    const rgpdTexto = document.getElementById("rgpd-texto");
+    if (rgpdTexto) {
+      rgpdTexto.innerHTML = t.formRgpd;
+      const nuevoBtnPrivacidad = document.getElementById("btn-privacidad");
+      if (nuevoBtnPrivacidad) {
+        nuevoBtnPrivacidad.addEventListener("click", function () {
+          document.getElementById("modal-privacidad").classList.add("activo");
+          document.body.style.overflow = "hidden";
+        });
+      }
+    }
+
+    // Traducir título del modal
+    const modalTitulo = document.getElementById("modal-titulo");
+    if (modalTitulo) modalTitulo.textContent = t.modalTitulo;
+
     document.querySelector(".contacto-right .btn-main").innerHTML = t.formBtn;
     document.querySelector(".footer-claim").textContent = t.footerClaim;
     document.querySelectorAll(".lang-btn").forEach((btn) => {

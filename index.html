@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Vatec360 - Diseño web para pequeños comercios</title>
+        <meta name="description" content="Vatec360 diseña webs profesionales para pequeños comercios. Presencia online, tiendas online y diseño a medida desde el primer día.">
+        <meta property="og:title" content="Vatec360 — Diseño web para pequeños comercios">
+        <meta property="og:description" content="Webs que convierten visitas en clientes. Para pequeños comercios con grandes ambiciones.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://vatec360.netlify.app">
+        <meta property="og:image" content="https://vatec360.netlify.app/og-image.png">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23080808'/><text y='.9em' font-size='72' font-family='sans-serif' font-weight='bold' fill='%230057FF' x='10'>V</text></svg>">
         <link rel="stylesheet" href="style.css">
         <link
             href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
@@ -186,7 +193,7 @@
                     <div class="portfolio-info">
                         <strong>Peluquería Marta</strong>
                         <p>Web con reservas online</p>
-                        <span class="portfolio-tag">E-commerce</span>
+                        <span class="portfolio-tag">Reservas</span>
                     </div>
                 </div>
                 <div class="portfolio-item aparecer grande">
@@ -243,32 +250,38 @@
                         <div class="form-group">
                             <label>Nombre</label>
                             <input type="text" name="nombre"
-                                placeholder="Tu nombre" />
+                                placeholder="Tu nombre" required autocomplete="given-name" />
                         </div>
                         <div class="form-group">
                             <label>Teléfono</label>
-                            <input type="text" name="telefono"
-                                placeholder="+34 ..." />
+                            <input type="tel" name="telefono"
+                                placeholder="+34 ..." required autocomplete="tel" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
                         <input type="email" name="email"
-                            placeholder="tu@email.com" />
+                            placeholder="tu@email.com" required autocomplete="email" />
                     </div>
                     <div class="form-group">
                         <label>¿Qué necesitas?</label>
-                        <select name="servicio">
-                            <option>Web corporativa</option>
-                            <option>Tienda online</option>
-                            <option>Rediseño</option>
-                            <option>Otro</option>
+                        <select name="servicio" id="select-servicio">
+                            <option value="web-corporativa">Web corporativa</option>
+                            <option value="tienda-online">Tienda online</option>
+                            <option value="rediseno">Rediseño</option>
+                            <option value="otro">Otro</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Cuéntame más</label>
                         <textarea name="mensaje"
-                            placeholder="Descripción de tu negocio y lo que buscas..."></textarea>
+                            placeholder="Descripción de tu negocio y lo que buscas..." required></textarea>
+                    </div>
+                    <div class="form-group form-group-rgpd">
+                        <label class="rgpd-label">
+                            <input type="checkbox" name="rgpd" id="rgpd-check" required />
+                            <span id="rgpd-texto">He leído y acepto la <button type="button" class="link-privacidad" id="btn-privacidad">política de privacidad</button></span>
+                        </label>
                     </div>
                     <button type="submit" class="btn-main"
                         style="width:100%; justify-content:center;">Enviar
@@ -288,6 +301,22 @@
                 <p>+34 614 454 587</p>
             </div>
         </footer>
+
+        <!-- MODAL POLÍTICA DE PRIVACIDAD -->
+        <div class="modal-overlay" id="modal-privacidad" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+            <div class="modal-box">
+                <button class="modal-cerrar" id="modal-cerrar" aria-label="Cerrar">✕</button>
+                <h2 id="modal-titulo">Política de Privacidad</h2>
+                <div class="modal-content">
+                    <p><strong>Responsable:</strong> Vatec360 · hola@vatec360.com</p>
+                    <p><strong>Finalidad:</strong> Gestionar las consultas y solicitudes de presupuesto que nos envíes a través del formulario de contacto.</p>
+                    <p><strong>Legitimación:</strong> Consentimiento del interesado (art. 6.1.a RGPD).</p>
+                    <p><strong>Destinatarios:</strong> No se cederán datos a terceros salvo obligación legal. El formulario se gestiona a través de Netlify Forms, con servidores en la UE/EEE.</p>
+                    <p><strong>Derechos:</strong> Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a hola@vatec360.com.</p>
+                    <p><strong>Conservación:</strong> Tus datos se conservarán mientras sean necesarios para atender tu consulta y no más de 2 años.</p>
+                </div>
+            </div>
+        </div>
 
         <script src="script.js"></script>
     </body>
