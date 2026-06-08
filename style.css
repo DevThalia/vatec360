@@ -265,3 +265,27 @@ body {
     font-size: 13px;
     color: #555;
 }
+
+/* MENSAJE ÉXITO */
+.exito {
+    text-align: center;
+    padding: 48px 24px;
+    background: #f0f9f4;
+    border-radius: 12px;
+    border: 1px solid #9fe1cb;
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.exito h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #0f6e56;
+    margin-bottom: 10px;
+}
+
+.exito p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
