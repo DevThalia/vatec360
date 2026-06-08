@@ -1,262 +1,294 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vatec360 - Diseño web para pequeños comercios</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vatec360 - Diseño web para pequeños comercios</title>
+        <link rel="stylesheet" href="style.css">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
 
-    <!-- CURSOR PERSONALIZADO -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+        <!-- CURSOR PERSONALIZADO -->
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
 
-    <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
-        <div class="logo">VATEC<span>360</span></div>
-        <button class="menu-btn" id="menu-btn" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><a href="#contacto" class="nav-cta">Hablemos →</a></li>
-        </ul>
-    </nav>
+        <!-- NAVBAR -->
+        <nav class="navbar" id="navbar">
+            <div class="logo">VATEC<span>360</span></div>
+            <button class="menu-btn" id="menu-btn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-bg-text">WEB</div>
-        <div class="hero-content">
-            <div class="hero-tag">
-                <span class="dot"></span>
-                Diseño web · Barcelona
-            </div>
-            <h1 class="hero-title">
-                <span class="line" data-text="Diseñamos.">Diseñamos.</span>
-                <span class="line accent" data-text="Creamos.">Creamos.</span>
-                <span class="line" data-text="Lanzamos.">Lanzamos.</span>
-            </h1>
-            <p class="hero-sub">Webs que convierten visitas en clientes.<br>Para pequeños comercios con grandes ambiciones.</p>
-            <div class="hero-actions">
-                <a href="#contacto" class="btn-main">Quiero mi web <span>↗</span></a>
-                <a href="#portfolio" class="btn-ghost">Ver trabajos</a>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="hero-card card-float">
-                <div class="card-dot green"></div>
-                <p>vatec360.com</p>
-                <span>En vivo ✦</span>
-            </div>
-            <div class="hero-card card-float-2">
-                <p class="card-stat">+120%</p>
-                <span>Más visibilidad</span>
-            </div>
-            <div class="hero-circle">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#0057FF" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,73.1,41.9C64.8,54.6,53.9,65.5,40.9,73.2C27.9,80.9,13.9,85.4,-0.2,85.7C-14.4,86,-28.8,82.1,-41.1,74.6C-53.5,67.1,-63.8,56,-71.9,43C-80,30,-85.8,15,-85.8,0C-85.8,-15,-80,-30,-72.1,-43.4C-64.2,-56.8,-54.2,-68.5,-41.5,-76.2C-28.8,-83.9,-14.4,-87.5,0.3,-87.9C15,-88.4,30.6,-83.7,44.7,-76.4Z" transform="translate(100 100)" />
-                </svg>
-                <div class="circle-text">EL LATIDO<br>DIGITAL</div>
-            </div>
-        </div>
-        <div class="scroll-hint">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
+            <ul class="nav-links" id="nav-links">
+                <li class="lang-selector">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <span>|</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <span>|</span>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                </li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#contacto" class="nav-cta">Hablemos →</a></li>
+            </ul>
+        </nav>
 
-    <!-- BANDA MARQUEE -->
-    <div class="marquee-wrap">
-        <div class="marquee-track">
-            <span>Diseño Web ✦</span>
-            <span>Tiendas Online ✦</span>
-            <span>SEO ✦</span>
-            <span>Responsive ✦</span>
-            <span>Branding Digital ✦</span>
-            <span>Landing Pages ✦</span>
-            <span>Diseño Web ✦</span>
-            <span>Tiendas Online ✦</span>
-            <span>SEO ✦</span>
-            <span>Responsive ✦</span>
-            <span>Branding Digital ✦</span>
-            <span>Landing Pages ✦</span>
-        </div>
-    </div>
-
-    <!-- SERVICIOS -->
-    <section class="servicios" id="servicios">
-        <div class="seccion-eyebrow">
-            <span class="eyebrow-line"></span>
-            <span>Servicios</span>
-        </div>
-        <div class="servicios-header">
-            <h2>¿Qué puedo hacer<br><em>por tu negocio?</em></h2>
-            <p>Me adapto a lo que necesitas,<br>desde una web sencilla hasta tu tienda online.</p>
-        </div>
-        <div class="servicios-grid">
-            <div class="servicio-card aparecer">
-                <div class="card-num">01</div>
-                <div class="card-icon">🌐</div>
-                <h3>Web corporativa</h3>
-                <p>Presencia online profesional para tu negocio desde el primer día.</p>
-                <div class="card-arrow">→</div>
-            </div>
-            <div class="servicio-card aparecer">
-                <div class="card-num">02</div>
-                <div class="card-icon">🛒</div>
-                <h3>Tienda online</h3>
-                <p>Vende tus productos por internet con una tienda fácil de gestionar.</p>
-                <div class="card-arrow">→</div>
-            </div>
-            <div class="servicio-card aparecer">
-                <div class="card-num">03</div>
-                <div class="card-icon">🎨</div>
-                <h3>Diseño a medida</h3>
-                <p>Diseño único que refleja la personalidad de tu marca.</p>
-                <div class="card-arrow">→</div>
-            </div>
-            <div class="servicio-card aparecer">
-                <div class="card-num">04</div>
-                <div class="card-icon">📱</div>
-                <h3>Móvil primero</h3>
-                <p>Todas las webs funcionan perfectamente en cualquier dispositivo.</p>
-                <div class="card-arrow">→</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STATS -->
-    <section class="stats">
-        <div class="stat aparecer">
-            <span class="stat-num">100%</span>
-            <span class="stat-label">Webs responsive</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat aparecer">
-            <span class="stat-num">48h</span>
-            <span class="stat-label">Tiempo de respuesta</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat aparecer">
-            <span class="stat-num">∞</span>
-            <span class="stat-label">Soporte incluido</span>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section class="portfolio" id="portfolio">
-        <div class="seccion-eyebrow">
-            <span class="eyebrow-line"></span>
-            <span>Portfolio</span>
-        </div>
-        <h2 class="portfolio-title">Algunos <em>trabajos</em></h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item aparecer">
-                <div class="portfolio-img" style="background: linear-gradient(135deg, #0057FF, #00C6FF);">
-                    <span class="portfolio-label">Peluquería Marta</span>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-bg-text">WEB</div>
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span class="dot"></span>
+                    Diseño web · En cualquier parte del mundo
                 </div>
-                <div class="portfolio-info">
-                    <strong>Peluquería Marta</strong>
-                    <p>Web con reservas online</p>
-                    <span class="portfolio-tag">E-commerce</span>
+                <h1 class="hero-title">
+                    <span class="line" data-text="Diseñamos.">Diseñamos.</span>
+                    <span class="line accent"
+                        data-text="Creamos.">Creamos.</span>
+                    <span class="line" data-text="Lanzamos.">Lanzamos.</span>
+                </h1>
+                <p class="hero-sub">Webs que convierten visitas en
+                    clientes.<br>Para pequeños comercios con grandes
+                    ambiciones.</p>
+                <div class="hero-actions">
+                    <a href="#contacto" class="btn-main">Quiero mi web
+                        <span>↗</span></a>
+                    <a href="#portfolio" class="btn-ghost">Ver trabajos</a>
                 </div>
             </div>
-            <div class="portfolio-item aparecer grande">
-                <div class="portfolio-img" style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e);">
-                    <span class="portfolio-label">Cafetería El Rincón</span>
+            <div class="hero-visual">
+                <div class="hero-card card-float">
+                    <div class="card-dot green"></div>
+                    <p>vatec360.com</p>
+                    <span>En vivo ✦</span>
                 </div>
-                <div class="portfolio-info">
-                    <strong>Cafetería El Rincón</strong>
-                    <p>Carta digital + contacto</p>
-                    <span class="portfolio-tag">Restauración</span>
+                <div class="hero-card card-float-2">
+                    <p class="card-stat">+120%</p>
+                    <span>Más visibilidad</span>
+                </div>
+                <div class="hero-circle">
+                    <svg viewBox="0 0 200 200"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#0057FF"
+                            d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,73.1,41.9C64.8,54.6,53.9,65.5,40.9,73.2C27.9,80.9,13.9,85.4,-0.2,85.7C-14.4,86,-28.8,82.1,-41.1,74.6C-53.5,67.1,-63.8,56,-71.9,43C-80,30,-85.8,15,-85.8,0C-85.8,-15,-80,-30,-72.1,-43.4C-64.2,-56.8,-54.2,-68.5,-41.5,-76.2C-28.8,-83.9,-14.4,-87.5,0.3,-87.9C15,-88.4,30.6,-83.7,44.7,-76.4Z"
+                            transform="translate(100 100)" />
+                    </svg>
+                    <div class="circle-text">EL LATIDO<br>DIGITAL</div>
                 </div>
             </div>
-            <div class="portfolio-item aparecer">
-                <div class="portfolio-img" style="background: linear-gradient(135deg, #533ab7, #9b59b6);">
-                    <span class="portfolio-label">Fontanería Sánchez</span>
-                </div>
-                <div class="portfolio-info">
-                    <strong>Fontanería Sánchez</strong>
-                    <p>Web corporativa</p>
-                    <span class="portfolio-tag">Servicios</span>
-                </div>
+            <div class="scroll-hint">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- BANDA MARQUEE -->
+        <div class="marquee-wrap">
+            <div class="marquee-track">
+                <span>Diseño Web ✦</span>
+                <span>Tiendas Online ✦</span>
+                <span>SEO ✦</span>
+                <span>Responsive ✦</span>
+                <span>Branding Digital ✦</span>
+                <span>Landing Pages ✦</span>
+                <span>Diseño Web ✦</span>
+                <span>Tiendas Online ✦</span>
+                <span>SEO ✦</span>
+                <span>Responsive ✦</span>
+                <span>Branding Digital ✦</span>
+                <span>Landing Pages ✦</span>
             </div>
         </div>
-    </section>
 
-    <!-- CONTACTO -->
-    <section class="contacto" id="contacto">
-        <div class="contacto-left">
+        <!-- SERVICIOS -->
+        <section class="servicios" id="servicios">
             <div class="seccion-eyebrow">
                 <span class="eyebrow-line"></span>
-                <span>Contacto</span>
+                <span>Servicios</span>
             </div>
-            <h2>¿Hablamos?<br><em>Sin compromiso.</em></h2>
-            <p>Cuéntame qué necesitas y te preparo un presupuesto personalizado en menos de 24 horas.</p>
-            <div class="contacto-info">
-                <a href="tel:+34614454587" class="info-item">
-                    <span class="info-icon">📞</span>
-                    <span>+34 614 454 587</span>
-                </a>
-                <a href="mailto:hola@vatec360.com" class="info-item">
-                    <span class="info-icon">✉️</span>
-                    <span>hola@vatec360.com</span>
-                </a>
+            <div class="servicios-header">
+                <h2>¿Qué puedo hacer<br><em>por tu negocio?</em></h2>
+                <p>Me adapto a lo que necesitas,<br>desde una web sencilla hasta
+                    tu tienda online.</p>
             </div>
-        </div>
-        <div class="contacto-right">
-            <form class="contacto-form" name="contacto" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="contacto" />
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Nombre</label>
-                        <input type="text" name="nombre" placeholder="Tu nombre" />
+            <div class="servicios-grid">
+                <div class="servicio-card aparecer">
+                    <div class="card-num">01</div>
+                    <div class="card-icon">🌐</div>
+                    <h3>Web corporativa</h3>
+                    <p>Presencia online profesional para tu negocio desde el
+                        primer día.</p>
+                    <div class="card-arrow">→</div>
+                </div>
+                <div class="servicio-card aparecer">
+                    <div class="card-num">02</div>
+                    <div class="card-icon">🛒</div>
+                    <h3>Tienda online</h3>
+                    <p>Vende tus productos por internet con una tienda fácil de
+                        gestionar.</p>
+                    <div class="card-arrow">→</div>
+                </div>
+                <div class="servicio-card aparecer">
+                    <div class="card-num">03</div>
+                    <div class="card-icon">🎨</div>
+                    <h3>Diseño a medida</h3>
+                    <p>Diseño único que refleja la personalidad de tu marca.</p>
+                    <div class="card-arrow">→</div>
+                </div>
+                <div class="servicio-card aparecer">
+                    <div class="card-num">04</div>
+                    <div class="card-icon">📱</div>
+                    <h3>Móvil primero</h3>
+                    <p>Todas las webs funcionan perfectamente en cualquier
+                        dispositivo.</p>
+                    <div class="card-arrow">→</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats">
+            <div class="stat aparecer">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Webs responsive</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat aparecer">
+                <span class="stat-num">48h</span>
+                <span class="stat-label">Tiempo de respuesta</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat aparecer">
+                <span class="stat-num">∞</span>
+                <span class="stat-label">Soporte incluido</span>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO -->
+        <section class="portfolio" id="portfolio">
+            <div class="seccion-eyebrow">
+                <span class="eyebrow-line"></span>
+                <span>Portfolio</span>
+            </div>
+            <h2 class="portfolio-title">Algunos <em>trabajos</em></h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item aparecer">
+                    <div class="portfolio-img"
+                        style="background: linear-gradient(135deg, #0057FF, #00C6FF);">
+                        <span class="portfolio-label">Peluquería Marta</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <strong>Peluquería Marta</strong>
+                        <p>Web con reservas online</p>
+                        <span class="portfolio-tag">E-commerce</span>
+                    </div>
+                </div>
+                <div class="portfolio-item aparecer grande">
+                    <div class="portfolio-img"
+                        style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e);">
+                        <span class="portfolio-label">Cafetería El Rincón</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <strong>Cafetería El Rincón</strong>
+                        <p>Carta digital + contacto</p>
+                        <span class="portfolio-tag">Restauración</span>
+                    </div>
+                </div>
+                <div class="portfolio-item aparecer">
+                    <div class="portfolio-img"
+                        style="background: linear-gradient(135deg, #533ab7, #9b59b6);">
+                        <span class="portfolio-label">Fontanería Sánchez</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <strong>Fontanería Sánchez</strong>
+                        <p>Web corporativa</p>
+                        <span class="portfolio-tag">Servicios</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="contacto" id="contacto">
+            <div class="contacto-left">
+                <div class="seccion-eyebrow">
+                    <span class="eyebrow-line"></span>
+                    <span>Contacto</span>
+                </div>
+                <h2>¿Hablamos?<br><em>Sin compromiso.</em></h2>
+                <p>Cuéntame qué necesitas y te preparo un presupuesto
+                    personalizado en menos de 24 horas.</p>
+                <div class="contacto-info">
+                    <a href="tel:+34614454587" class="info-item">
+                        <span class="info-icon">📞</span>
+                        <span>+34 614 454 587</span>
+                    </a>
+                    <a href="mailto:hola@vatec360.com" class="info-item">
+                        <span class="info-icon">✉️</span>
+                        <span>hola@vatec360.com</span>
+                    </a>
+                </div>
+            </div>
+            <div class="contacto-right">
+                <form class="contacto-form" name="contacto" method="POST"
+                    data-netlify="true">
+                    <input type="hidden" name="form-name" value="contacto" />
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" name="nombre"
+                                placeholder="Tu nombre" />
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="text" name="telefono"
+                                placeholder="+34 ..." />
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label>Teléfono</label>
-                        <input type="text" name="telefono" placeholder="+34 ..." />
+                        <label>Email</label>
+                        <input type="email" name="email"
+                            placeholder="tu@email.com" />
                     </div>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" name="email" placeholder="tu@email.com" />
-                </div>
-                <div class="form-group">
-                    <label>¿Qué necesitas?</label>
-                    <select name="servicio">
-                        <option>Web corporativa</option>
-                        <option>Tienda online</option>
-                        <option>Rediseño</option>
-                        <option>Otro</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Cuéntame más</label>
-                    <textarea name="mensaje" placeholder="Descripción de tu negocio y lo que buscas..."></textarea>
-                </div>
-                <button type="submit" class="btn-main" style="width:100%; justify-content:center;">Enviar mensaje <span>↗</span></button>
-            </form>
-        </div>
-    </section>
+                    <div class="form-group">
+                        <label>¿Qué necesitas?</label>
+                        <select name="servicio">
+                            <option>Web corporativa</option>
+                            <option>Tienda online</option>
+                            <option>Rediseño</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Cuéntame más</label>
+                        <textarea name="mensaje"
+                            placeholder="Descripción de tu negocio y lo que buscas..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-main"
+                        style="width:100%; justify-content:center;">Enviar
+                        mensaje <span>↗</span></button>
+                </form>
+            </div>
+        </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="logo footer-logo">VATEC<span>360</span></div>
-            <p class="footer-claim">El latido digital de tu negocio</p>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Vatec360 · Barcelona</p>
-            <p>+34 614 454 587</p>
-        </div>
-    </footer>
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="logo footer-logo">VATEC<span>360</span></div>
+                <p class="footer-claim">El latido digital de tu negocio</p>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Vatec360 · Barcelona</p>
+                <p>+34 614 454 587</p>
+            </div>
+        </footer>
 
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>

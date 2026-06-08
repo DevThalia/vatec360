@@ -218,7 +218,7 @@ body {
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: clamp(48px, 6vw, 80px);
+    font-size: clamp(28px, 7vw, 80px);
     font-weight: 800;
     line-height: 1.0;
     letter-spacing: -0.03em;
@@ -997,6 +997,40 @@ body {
     transform: translateY(0);
 }
 
+
+/* SELECTOR IDIOMA */
+.lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.lang-selector span {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gris);
+    cursor: pointer;
+    font-family: var(--font-body);
+    padding: 2px 4px;
+    transition: color 0.2s;
+}
+
+.lang-btn.active {
+    color: var(--negro);
+    font-weight: 700;
+}
+
+.lang-btn:hover {
+    color: var(--negro);
+}
+
 /* ================================
    RESPONSIVE MÓVIL
 ================================ */
@@ -1044,8 +1078,7 @@ body {
     }
 
     .hero-title {
-        font-size: 11vw;
-        letter-spacing: -0.02em;
+        font-size: clamp(28px, 8vw, 60px);
     }
 
     .hero-bg-text {
@@ -1058,7 +1091,10 @@ body {
     }
 
     .hero-visual {
-        display: none;
+        display: block;
+        height: 280px;
+        opacity: 0.4;
+        pointer-events: none;
     }
 
     .hero-actions {
@@ -1172,35 +1208,23 @@ body {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 13vw;
-    }
-
-    .servicios-grid {
-        grid-template-columns: 1fr;
+        font-size: clamp(26px, 10vw, 48px);
     }
 
     .hero-tag {
         font-size: 11px;
         padding: 5px 12px;
     }
-}
 
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 13vw;
+    .hero-sub {
+        font-size: 14px;
     }
 
     .servicios-grid {
         grid-template-columns: 1fr;
     }
 
-    .hero-tag {
-        font-size: 11px;
-        padding: 5px 12px;
-    }
-}
-@media (max-width: 600px) {
-    .servicios-grid {
-        grid-template-columns: 1fr;
+    .hero-bg-text {
+        display: none;
     }
 }
