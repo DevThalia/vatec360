@@ -79,26 +79,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // Si hay errores, parar aquí
     if (!valido) return;
 
-    // Enviamos los datos a Netlify manualmente
+    // Enviamos los datos a Netlify
     const datos = new FormData(formulario);
     fetch("/", {
       method: "POST",
-      body: datos,
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(datos).toString(),
     })
       .then(function () {
-        // Si va bien, ocultamos el formulario
         formulario.innerHTML = `
-    <div class="exito">
-        <div class="exito-icono">✉️</div>
-        <h3>¡Mensaje recibido!</h3>
-        <p>Gracias por contactar con Vatec360.<br>Te respondo en menos de 24 horas.</p>
-        <a href="#" class="btn-primary">Volver al inicio</a>
-        <!-- <a href="https://vatec360.netlify.app" class="btn-primary">Volver al inicio</a> -->
-    </div>
-`;
+                <div class="exito">
+                    <div class="exito-icono">✉️</div>
+                    <h3>¡Mensaje recibido!</h3>
+                    <p>Gracias por contactar con Vatec360.<br>Te respondo en menos de 24 horas.</p>
+                    <a href="https://vatec360.netlify.app" class="btn-primary">Volver al inicio</a>
+                </div>
+            `;
       })
       .catch(function () {
-        // Si hay algún error, avisamos
         alert("Ha habido un error, inténtalo de nuevo.");
       });
   });
