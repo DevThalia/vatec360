@@ -23,6 +23,40 @@ document.addEventListener("DOMContentLoaded", function () {
     // Evitamos que la página se recargue
     e.preventDefault();
 
+    // VALIDACIÓN
+        let valido = true
+
+        // Limpiar errores anteriores
+        formulario.querySelectorAll('.error').forEach(el => el.classList.remove('error'))
+        formulario.querySelectorAll('.mensaje-error').forEach(el => el.remove())
+
+        // Comprobar campos vacíos
+        formulario.querySelectorAll('input, textarea, select').forEach(function(campo) {
+            if (campo.type === 'hidden') return
+            if (campo.value.trim() === '') {
+                campo.classList.add('error')
+                const msg = document.createElement('p')
+                msg.classList.add('mensaje-error')
+                msg.textContent = 'Este campo es obligatorio'
+                campo.parentNode.appendChild(msg)
+                valido = false
+            }
+        })
+
+        // Comprobar formato email
+        const email = formulario.querySelector('input[type="email"]')
+        if (email && email.value && !email.value.includes('@')) {
+            email.classList.add('error')
+            const msg = document.createElement('p')
+            msg.classList.add('mensaje-error')
+            msg.textContent = 'Introduce un email válido'
+            email.parentNode.appendChild(msg)
+            valido = false
+        }
+
+        // Si hay errores, parar aquí
+        if (!valido) return
+
     // Enviamos los datos a Netlify manualmente
     const datos = new FormData(formulario);
     fetch("/", {
