@@ -3,6 +3,21 @@ document.addEventListener("DOMContentLoaded", function () {
   // Buscamos el formulario en el HTML
   const formulario = document.querySelector(".contacto-form");
 
+  // MENÚ HAMBURGUESA
+    const menuBtn = document.getElementById('menu-btn')
+    const navLinks = document.getElementById('nav-links')
+
+    menuBtn.addEventListener('click', function() {
+        navLinks.classList.toggle('abierto')
+    })
+
+    // Cerrar menú al pulsar un enlace
+    navLinks.querySelectorAll('a').forEach(function(enlace) {
+        enlace.addEventListener('click', function() {
+            navLinks.classList.remove('abierto')
+        })
+    })
+
   // Cuando alguien envíe el formulario...
   formulario.addEventListener("submit", function (e) {
     // Evitamos que la página se recargue
@@ -21,7 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="exito-icono">✉️</div>
         <h3>¡Mensaje recibido!</h3>
         <p>Gracias por contactar con Vatec360.<br>Te respondo en menos de 24 horas.</p>
-        <a href="#contacto" class="btn-primary">Enviar otro mensaje</a>
+        <a href="#" class="btn-primary">Volver al inicio</a>
+        <!-- <a href="https://vatec360.netlify.app" class="btn-primary">Volver al inicio</a> -->
     </div>
 `;
       })
