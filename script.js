@@ -17,11 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(function () {
         // Si va bien, ocultamos el formulario
         formulario.innerHTML = `
-                <div class="exito">
-                    <h3>¡Mensaje enviado! 🎉</h3>
-                    <p>Gracias por contactar con Vatec360. Te respondo en menos de 24 horas.</p>
-                </div>
-            `;
+    <div class="exito">
+        <div class="exito-icono">✉️</div>
+        <h3>¡Mensaje recibido!</h3>
+        <p>Gracias por contactar con Vatec360.<br>Te respondo en menos de 24 horas.</p>
+        <a href="#contacto" class="btn-primary">Enviar otro mensaje</a>
+    </div>
+`;
       })
       .catch(function () {
         // Si hay algún error, avisamos

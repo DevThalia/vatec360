@@ -269,18 +269,23 @@ body {
 /* MENSAJE ÉXITO */
 .exito {
     text-align: center;
-    padding: 48px 24px;
-    background: #f0f9f4;
+    padding: 48px 32px;
+    background: #fff;
     border-radius: 12px;
-    border: 1px solid #9fe1cb;
+    border: 1px solid #eee;
     max-width: 540px;
     margin: 0 auto;
 }
 
+.exito-icono {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
 .exito h3 {
     font-size: 22px;
-    font-weight: 600;
-    color: #0f6e56;
+    font-weight: 700;
+    color: #222;
     margin-bottom: 10px;
 }
 
@@ -288,4 +293,13 @@ body {
     font-size: 15px;
     color: #555;
     line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.exito .btn-primary {
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
 }
