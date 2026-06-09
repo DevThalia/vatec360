@@ -1,24 +1,6 @@
-const NOTION_TOKEN = "";
-const DATABASE_ID = "";
-
 async function cargarArticulos() {
   try {
-    const response = await fetch(`/api/notion/databases/${DATABASE_ID}/query`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${NOTION_TOKEN}`,
-        "Content-Type": "application/json",
-        "Notion-Version": "2022-06-28",
-      },
-      body: JSON.stringify({
-        filter: {
-          property: "Publicado",
-          checkbox: { equals: true },
-        },
-        sorts: [{ property: "Fecha", direction: "descending" }],
-      }),
-    });
-
+    const response = await fetch("/.netlify/functions/notion-blog");
     const data = await response.json();
 
     if (!data.results || data.results.length === 0) {
@@ -53,25 +35,24 @@ function renderArticulos(articulos) {
         : "";
 
       return `
-      <a href="articulo.html?slug=${slug}&id=${articulo.id}" class="blog-card aparecer">
-        <div class="blog-card-img">${emoji}</div>
-        <div class="blog-card-body">
-          <span class="blog-card-tag">${categoria}</span>
-          <h2 class="blog-card-title">${titulo}</h2>
-          <p class="blog-card-excerpt">${extracto}</p>
-          <div class="blog-card-meta">
-            <span>${fecha}</span>
-            <span>Leer más →</span>
+        <a href="articulo.html?slug=${slug}&id=${articulo.id}" class="blog-card aparecer">
+          <div class="blog-card-img">${emoji}</div>
+          <div class="blog-card-body">
+            <span class="blog-card-tag">${categoria}</span>
+            <h2 class="blog-card-title">${titulo}</h2>
+            <p class="blog-card-excerpt">${extracto}</p>
+            <div class="blog-card-meta">
+              <span>${fecha}</span>
+              <span>Leer más →</span>
+            </div>
           </div>
-        </div>
-      </a>
-    `;
+        </a>
+      `;
     })
     .join("");
 
   grid.innerHTML = html;
 
-  // Animaciones
   document.querySelectorAll(".aparecer").forEach((el) => {
     setTimeout(() => el.classList.add("visible"), 100);
   });
