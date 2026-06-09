@@ -1,6 +1,7 @@
 [functions]
   directory = "netlify/functions"
-
+  node_bundler = "esbuild"
+  
 [[redirects]]
   from = "/api/notion/*"
   to = "https://api.notion.com/v1/:splat"
