@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Enviamos a Web3Forms
       const datos = new FormData(formulario);
-      datos.append("access_key", "TU_ACCESS_KEY_WEB3FORMS"); 
+      datos.append("access_key", "f34a842c-197f-4e66-9a78-b9385cdb2da9"); 
       datos.append("subject", "Nuevo contacto desde Vatec360");
       datos.append("from_name", "Vatec360 Web");
 
