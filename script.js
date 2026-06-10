@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ================================
-  // FORMULARIO
+  // FORMULARIO — Web3Forms
   // ================================
   const formulario = document.querySelector(".contacto-form");
 
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mostrarError(textarea, "Escribe al menos 10 caracteres");
       }
 
-      const rgpd = formulario.querySelector('#rgpd-check');
+      const rgpd = formulario.querySelector("#rgpd-check");
       if (!rgpd.checked) {
         mostrarError(rgpd, "Debes aceptar la política de privacidad");
         valido = false;
@@ -121,23 +121,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!valido) return;
 
+      // Botón de carga
+      const btnSubmit = formulario.querySelector('[type="submit"]');
+      if (btnSubmit) {
+        btnSubmit.innerHTML = "Enviando...";
+        btnSubmit.disabled = true;
+      }
+
+      // Enviamos a Web3Forms
       const datos = new FormData(formulario);
-      fetch("/", {
+      datos.append("access_key", "TU_ACCESS_KEY_WEB3FORMS"); 
+      datos.append("subject", "Nuevo contacto desde Vatec360");
+      datos.append("from_name", "Vatec360 Web");
+
+      fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(datos).toString(),
+        body: datos,
       })
-        .then(function () {
-          formulario.innerHTML = `
-            <div class="exito">
-              <div class="exito-icono">✉️</div>
-              <h3>¡Mensaje recibido!</h3>
-              <p>Gracias por contactar con Vatec360.<br>Te respondo en menos de 24 horas.</p>
-              <a href="${window.location.origin}" class="btn-main">Volver al inicio <span>↗</span></a>
-            </div>
-          `;
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (data) {
+          if (data.success) {
+            formulario.innerHTML = `
+              <div class="exito">
+                <div class="exito-icono">✉️</div>
+                <h3>¡Mensaje recibido!</h3>
+                <p>Gracias por contactar con Vatec360.<br>Te respondo en menos de 24 horas.</p>
+                <a href="${window.location.origin}" class="btn-main">Volver al inicio <span>↗</span></a>
+              </div>
+            `;
+          } else {
+            throw new Error("Error en el envío");
+          }
         })
         .catch(function () {
+          if (btnSubmit) {
+            btnSubmit.innerHTML = "Enviar mensaje <span>↗</span>";
+            btnSubmit.disabled = false;
+          }
           alert("Ha habido un error, inténtalo de nuevo.");
         });
     });
@@ -239,7 +261,8 @@ document.addEventListener("DOMContentLoaded", function () {
       formServicio: "¿Qué necesitas?",
       formMensaje: "Cuéntame más",
       formBtn: "Enviar mensaje <span>↗</span>",
-      formRgpd: 'He leído y acepto la <button type="button" class="link-privacidad" id="btn-privacidad">política de privacidad</button>',
+      formRgpd:
+        'He leído y acepto la <button type="button" class="link-privacidad" id="btn-privacidad">política de privacidad</button>',
       selectOpciones: ["Web corporativa", "Tienda online", "Rediseño", "Otro"],
       footerClaim: "El latido digital de tu negocio",
       modalTitulo: "Política de Privacidad",
@@ -284,8 +307,14 @@ document.addEventListener("DOMContentLoaded", function () {
       formServicio: "What do you need?",
       formMensaje: "Tell me more",
       formBtn: "Send message <span>↗</span>",
-      formRgpd: 'I have read and accept the <button type="button" class="link-privacidad" id="btn-privacidad">privacy policy</button>',
-      selectOpciones: ["Corporate website", "Online store", "Redesign", "Other"],
+      formRgpd:
+        'I have read and accept the <button type="button" class="link-privacidad" id="btn-privacidad">privacy policy</button>',
+      selectOpciones: [
+        "Corporate website",
+        "Online store",
+        "Redesign",
+        "Other",
+      ],
       footerClaim: "The digital heartbeat of your business",
       modalTitulo: "Privacy Policy",
     },
@@ -332,7 +361,8 @@ document.addEventListener("DOMContentLoaded", function () {
       formServicio: "De quoi avez-vous besoin?",
       formMensaje: "Dites-m'en plus",
       formBtn: "Envoyer le message <span>↗</span>",
-      formRgpd: 'J\'ai lu et j\'accepte la <button type="button" class="link-privacidad" id="btn-privacidad">politique de confidentialité</button>',
+      formRgpd:
+        'J\'ai lu et j\'accepte la <button type="button" class="link-privacidad" id="btn-privacidad">politique de confidentialité</button>',
       selectOpciones: ["Site vitrine", "Boutique en ligne", "Refonte", "Autre"],
       footerClaim: "Le battement digital de votre entreprise",
       modalTitulo: "Politique de confidentialité",
@@ -342,7 +372,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function aplicarIdioma(lang) {
     const t = traducciones[lang];
 
-    // Actualizar atributo lang del documento
     document.getElementById("html-root").setAttribute("lang", lang);
 
     const links = document.querySelectorAll("#nav-links li a:not(.nav-cta)");
@@ -386,14 +415,15 @@ document.addEventListener("DOMContentLoaded", function () {
     statLabels[0].textContent = t.stat1;
     statLabels[1].textContent = t.stat2;
     statLabels[2].textContent = t.stat3;
-    const labels = document.querySelectorAll(".form-group label:not(.rgpd-label)");
+    const labels = document.querySelectorAll(
+      ".form-group label:not(.rgpd-label)",
+    );
     labels[0].textContent = t.formNombre;
     labels[1].textContent = t.formTelefono;
     labels[2].textContent = t.formEmail;
     labels[3].textContent = t.formServicio;
     labels[4].textContent = t.formMensaje;
 
-    // Traducir opciones del select
     const select = document.getElementById("select-servicio");
     if (select) {
       const opciones = select.querySelectorAll("option");
@@ -402,7 +432,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // Traducir texto RGPD y reconectar listener del modal
     const rgpdTexto = document.getElementById("rgpd-texto");
     if (rgpdTexto) {
       rgpdTexto.innerHTML = t.formRgpd;
@@ -415,7 +444,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Traducir título del modal
     const modalTitulo = document.getElementById("modal-titulo");
     if (modalTitulo) modalTitulo.textContent = t.modalTitulo;
 
