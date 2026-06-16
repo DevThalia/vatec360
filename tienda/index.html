@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -24,9 +24,26 @@
             <span></span>
         </button>
         <ul class="nav-links" id="nav-links">
+            <li class="lang-selector">
+                <button class="lang-btn active" data-lang="es">ES</button>
+                <span>|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <span>|</span>
+                <button class="lang-btn" data-lang="fr">FR</button>
+            </li>
             <li><a href="../#servicios">Servicios</a></li>
             <li><a href="../blog/">Blog</a></li>
             <li><a href="../tienda/" class="nav-active">Tienda</a></li>
+            <li>
+                <button class="nav-carrito" id="nav-carrito" aria-label="Ver carrito">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                    <span class="carrito-contador" style="display:none">0</span>
+                </button>
+            </li>
             <li><a href="../#contacto" class="nav-cta">Hablemos</a></li>
         </ul>
     </nav>
@@ -43,107 +60,122 @@
 
     <!-- PRODUCTOS -->
     <section class="productos-section">
-        <div class="productos-grid">
 
-            <!-- PRODUCTO 1 — Consultoría Web -->
-            <div class="producto-card destacado aparecer">
-                <div class="producto-badge">⭐ Más solicitado</div>
-                <div class="producto-img">
-                    <span class="producto-emoji">💼</span>
-                </div>
-                <div class="producto-body">
-                    <span class="producto-tag">Consultoría</span>
-                    <h2 class="producto-titulo">Consultoría Web Profesional</h2>
-                    <p class="producto-desc">Análisis completo de tu presencia online. Identificamos oportunidades, definimos estrategia y presupuestamos tu web ideal.</p>
-                    <ul class="producto-lista">
-                        <li>✅ Análisis de competencia</li>
-                        <li>✅ Propuesta de solución personalizada</li>
-                        <li>✅ Presupuesto detallado</li>
-                        <li>✅ Reporte de 20 páginas</li>
-                        <li>✅ Sesión de seguimiento</li>
-                    </ul>
-                    <div class="producto-footer">
-                        <div class="producto-precio">
-                            <span class="precio-actual">199€</span>
-                            <span class="precio-anterior">299€</span>
-                        </div>
-                        <a href="https://payhip.com/b/1o4Hs" target="_blank" class="btn-main" id="btn-consultoria">Contratar ahora <span>↗</span></a>
-                    </div>
-                </div>
+        <!-- FEATURED: Crea tu web entera -->
+        <div class="producto-featured aparecer">
+            <div class="producto-featured-img producto-img--premium">
+                <span class="producto-num">01</span>
             </div>
-
-            <!-- PRODUCTO 2 — Template Web -->
-            <div class="producto-card aparecer">
-                <div class="producto-img">
-                    <span class="producto-emoji">🌐</span>
-                </div>
-                <div class="producto-body">
-                    <span class="producto-tag">Template HTML</span>
-                    <h2 class="producto-titulo">Template Web Lista para Usar</h2>
-                    <p class="producto-desc">Plantilla profesional y moderna lista para implementar. Incluye todas las secciones básicas, responsive design y fácil de personalizar.</p>
-                    <ul class="producto-lista">
-                        <li>✅ HTML5 + CSS3 + JavaScript</li>
-                        <li>✅ 100% responsive</li>
-                        <li>✅ Formularios funcionales</li>
-                        <li>✅ SEO optimizada</li>
-                        <li>✅ Soporte técnico 60 días</li>
-                    </ul>
-                    <div class="producto-footer">
-                        <div class="producto-precio">
-                            <span class="precio-actual">89€</span>
-                            <span class="precio-anterior">129€</span>
-                        </div>
-                        <a href="#" class="btn-main" id="btn-template">Comprar ahora <span>↗</span></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PRODUCTO 3 — Guía SEO -->
-            <div class="producto-card aparecer">
-                <div class="producto-img">
-                    <span class="producto-emoji">📈</span>
-                </div>
-                <div class="producto-body">
-                    <span class="producto-tag">Guía Digital</span>
-                    <h2 class="producto-titulo">Guía SEO Básica</h2>
-                    <p class="producto-desc">Manual práctico para posicionar tu web en Google sin ser técnico. Estrategias simples pero efectivas para pequeños negocios.</p>
-                    <ul class="producto-lista">
-                        <li>✅ 35 páginas + ejemplos reales</li>
-                        <li>✅ Checklist implementación</li>
-                        <li>✅ Recursos descargables</li>
-                        <li>✅ Acceso a comunidad</li>
-                    </ul>
-                    <div class="producto-footer">
-                        <div class="producto-precio">
-                            <span class="precio-actual">39€</span>
-                            <span class="precio-anterior">59€</span>
-                        </div>
-                        <a href="#" class="btn-main" id="btn-guia-seo">Comprar ahora <span>↗</span></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PRODUCTO 4 — Crea tu web entera -->
-            <div class="producto-card aparecer">
-                <div class="producto-img">
-                    <span class="producto-emoji">🚀</span>
-                </div>
-                <div class="producto-body">
+            <div class="producto-featured-body">
+                <div class="producto-featured-top">
                     <span class="producto-tag">Servicio Premium</span>
-                    <h2 class="producto-titulo">Crea tu web entera</h2>
-                    <p class="producto-desc">Diseño y desarrollo completo de tu web profesional. Desde la estrategia hasta la publicación, todo incluido y personalizado.</p>
-                    <ul class="producto-lista">
-                        <li>✅ Diseño personalizado</li>
-                        <li>✅ Desarrollo responsivo</li>
-                        <li>✅ SEO integrado</li>
-                        <li>✅ Hosting y dominio</li>
-                        <li>✅ Soporte incluido 1 año</li>
-                    </ul>
-                    <div class="producto-footer">
-                        <div class="producto-precio">
-                            <span class="precio-actual">A presupuesto</span>
+                    <span class="producto-badge">Más solicitado</span>
+                </div>
+                <h2 class="producto-titulo">Crea tu web entera</h2>
+                <p class="producto-desc">Diseño y desarrollo completo de tu web profesional. Desde la estrategia hasta la publicación, todo incluido y completamente personalizado para tu negocio.</p>
+                <ul class="producto-lista">
+                    <li>Diseño exclusivo a medida</li>
+                    <li>Desarrollo responsivo</li>
+                    <li>SEO integrado desde el inicio</li>
+                    <li>Hosting y dominio incluidos</li>
+                    <li>Soporte técnico 1 año</li>
+                </ul>
+                <div class="producto-featured-footer">
+                    <div class="producto-precio">
+                        <span class="precio-etiqueta">Desde</span>
+                        <span class="precio-actual">A presupuesto</span>
+                    </div>
+                    <a href="../#contacto" class="btn-main">Pedir presupuesto <span>↗</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- LISTA DE PRODUCTOS -->
+        <div class="productos-lista">
+
+            <!-- Consultoría Web -->
+            <div class="producto-fila aparecer">
+                <div class="producto-fila-img producto-img--consultoria">
+                    <span class="producto-num">02</span>
+                </div>
+                <div class="producto-fila-body">
+                    <div class="producto-fila-info">
+                        <div>
+                            <span class="producto-tag">Consultoría</span>
+                            <h3 class="producto-titulo">Consultoría Web Profesional</h3>
+                            <p class="producto-desc">Análisis completo de tu presencia online. Identificamos oportunidades y presupuestamos tu web ideal.</p>
+                            <ul class="producto-lista producto-lista--inline">
+                                <li>Análisis de competencia</li>
+                                <li>Propuesta personalizada</li>
+                                <li>Presupuesto detallado</li>
+                                <li>Sesión de seguimiento</li>
+                            </ul>
                         </div>
-                        <a href="../#contacto" class="btn-main" id="btn-web-entera">Pedir presupuesto <span>↗</span></a>
+                        <div class="producto-fila-precio">
+                            <div class="producto-precio">
+                                <span class="precio-actual">199€</span>
+                                <span class="precio-anterior">299€</span>
+                            </div>
+                            <a href="https://payhip.com/b/1o4Hs" target="_blank" class="btn-main" id="btn-consultoria">Contratar <span>↗</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template Web -->
+            <div class="producto-fila aparecer">
+                <div class="producto-fila-img producto-img--template">
+                    <span class="producto-num">03</span>
+                </div>
+                <div class="producto-fila-body">
+                    <div class="producto-fila-info">
+                        <div>
+                            <span class="producto-tag">Template HTML</span>
+                            <h3 class="producto-titulo">Template Web Lista para Usar</h3>
+                            <p class="producto-desc">Plantilla profesional lista para implementar. Responsive, SEO optimizada y fácil de personalizar.</p>
+                            <ul class="producto-lista producto-lista--inline">
+                                <li>HTML5 + CSS3 + JS</li>
+                                <li>100% responsive</li>
+                                <li>Formularios funcionales</li>
+                                <li>Soporte 60 días</li>
+                            </ul>
+                        </div>
+                        <div class="producto-fila-precio">
+                            <div class="producto-precio">
+                                <span class="precio-actual">89€</span>
+                                <span class="precio-anterior">129€</span>
+                            </div>
+                            <a href="#" class="btn-main" id="btn-template">Al carrito <span>↗</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guía SEO -->
+            <div class="producto-fila aparecer">
+                <div class="producto-fila-img producto-img--seo">
+                    <span class="producto-num">04</span>
+                </div>
+                <div class="producto-fila-body">
+                    <div class="producto-fila-info">
+                        <div>
+                            <span class="producto-tag">Guía Digital</span>
+                            <h3 class="producto-titulo">Guía SEO Básica</h3>
+                            <p class="producto-desc">Manual práctico para posicionarte en Google sin ser técnico. Estrategias simples y efectivas.</p>
+                            <ul class="producto-lista producto-lista--inline">
+                                <li>35 páginas + ejemplos reales</li>
+                                <li>Checklist de implementación</li>
+                                <li>Recursos descargables</li>
+                                <li>Acceso a comunidad</li>
+                            </ul>
+                        </div>
+                        <div class="producto-fila-precio">
+                            <div class="producto-precio">
+                                <span class="precio-actual">39€</span>
+                                <span class="precio-anterior">59€</span>
+                            </div>
+                            <a href="#" class="btn-main" id="btn-guia-seo">Al carrito <span>↗</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -154,7 +186,11 @@
     <!-- GARANTÍA -->
     <section class="garantia aparecer">
         <div class="garantia-content">
-            <span class="garantia-emoji">🛡️</span>
+            <div class="garantia-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+            </div>
             <div>
                 <h3>Garantía 30 días</h3>
                 <p>Si no estás satisfecho te devuelvo el dinero. Sin preguntas.</p>
@@ -166,7 +202,12 @@
     <footer class="footer">
         <div class="footer-top">
             <a href="../" class="logo footer-logo">VATEC<span>360</span></a>
-            <p class="footer-claim">El latido digital de tu negocio</p>
+            <nav class="footer-nav">
+                <a href="../#servicios">Servicios</a>
+                <a href="../blog/">Blog</a>
+                <a href="../tienda/">Tienda</a>
+                <a href="../#contacto">Hablemos</a>
+            </nav>
         </div>
         <div class="footer-bottom">
             <p>© 2026 Vatec360 · Barcelona</p>
