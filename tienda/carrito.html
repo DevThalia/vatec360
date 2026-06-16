@@ -1,13 +1,12 @@
-﻿
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog · Vatec360</title>
-    <meta name="description" content="Consejos, tips y recursos sobre diseño web para pequeños comercios. Aprende cómo mejorar tu presencia online.">
+    <title>Tu Carrito · Vatec360</title>
+    <meta name="description" content="Revisa y completa tu compra en Vatec360.">
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="carrito.css">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23080808'/><text y='.9em' font-size='72' font-family='sans-serif' font-weight='bold' fill='%230057FF' x='10'>V</text></svg>">
 </head>
@@ -26,29 +25,28 @@
         </button>
         <ul class="nav-links" id="nav-links">
             <li><a href="../#servicios">Servicios</a></li>
-            <li><a href="../blog/" class="nav-active">Blog</a></li>
+            <li><a href="../blog/">Blog</a></li>
             <li><a href="../tienda/">Tienda</a></li>
             <li><a href="../#contacto" class="nav-cta">Hablemos</a></li>
         </ul>
     </nav>
 
-    <!-- HERO BLOG -->
-    <section class="blog-hero">
+    <!-- HERO CARRITO -->
+    <section class="carrito-hero">
         <div class="seccion-eyebrow">
             <span class="eyebrow-line"></span>
-            <span>Blog</span>
+            <span>Carrito</span>
         </div>
-        <h1>Consejos para <em>crecer online</em></h1>
-        <p>Tips, errores comunes y recursos para que tu negocio tenga la presencia digital que merece.</p>
+        <h1>Tu <em>carrito de compras</em></h1>
+        <p>Revisa tus productos y completa la compra.</p>
     </section>
 
-    <!-- ARTÍCULOS -->
-    <section class="blog-grid-section">
-        <div class="blog-grid" id="blog-grid">
-            <!-- Los artículos se cargan desde Notion aquí -->
-            <div class="blog-loading">
-                <div class="loading-spinner"></div>
-                <p>Cargando artículos...</p>
+    <!-- CARRITO -->
+    <section class="carrito-section">
+        <div class="carrito-contenido">
+            <div class="carrito-vacio">
+                <p>🛒 Tu carrito está vacío</p>
+                <a href="./" class="btn-main" style="margin-top: 20px;">Ver productos <span>↗</span></a>
             </div>
         </div>
     </section>
@@ -68,6 +66,6 @@
     <script src="../js/tema.js"></script>
     <script src="../js/floating-bubbles.js"></script>
     <script src="../script.js"></script>
-    <script src="blog.js"></script>
+    <script src="carrito.js"></script>
 </body>
 </html>

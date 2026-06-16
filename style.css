@@ -10,6 +10,21 @@
     --gris-claro: #f0f0ee;
     --font-display: 'Syne', sans-serif;
     --font-body: 'DM Sans', sans-serif;
+
+    /* Colores dinámicos para tema */
+    --bg-primary: #F8F8F6;
+    --bg-secondary: #f0f0ee;
+    --text-primary: #080808;
+    --text-secondary: #8a8a8a;
+    --border-color: rgba(0, 0, 0, 0.06);
+}
+
+html.dark-mode {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a2e;
+    --text-primary: #F8F8F6;
+    --text-secondary: #a0a0a0;
+    --border-color: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -24,10 +39,11 @@ html {
 
 body {
     font-family: var(--font-body);
-    background: var(--blanco);
-    color: var(--negro);
+    background: var(--bg-primary);
+    color: var(--text-primary);
     overflow-x: hidden;
     cursor: none;
+    transition: background 0.3s, color 0.3s;
 }
 
 /* ================================
@@ -74,7 +90,12 @@ body {
     background: rgba(248, 248, 246, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    transition: padding 0.3s;
+    transition: padding 0.3s, background 0.3s, border-color 0.3s;
+}
+
+html.dark-mode .navbar {
+    background: rgba(10, 10, 10, 0.92);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
 .navbar.scrolled {
@@ -86,7 +107,7 @@ body {
     font-size: 24px;
     font-weight: 800;
     letter-spacing: -0.5px;
-    color: var(--negro);
+    color: var(--text-primary);
 }
 
 .logo span {
@@ -125,6 +146,35 @@ body {
 
 .nav-cta:hover {
     background: var(--azul) !important;
+}
+
+/* ================================
+   TEMA TOGGLE
+================================ */
+.tema-toggle-item {
+    margin-left: 12px;
+}
+
+.tema-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tema-toggle:hover {
+    background: rgba(0, 87, 255, 0.1);
+    transform: scale(1.1);
+}
+
+html.dark-mode .tema-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .menu-btn {
@@ -1366,4 +1416,65 @@ body {
     .hero-bg-text {
         display: none;
     }
+
+    .floating-bubbles {
+        gap: 12px;
+    }
+
+    .floating-bubble {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+}
+
+/* ================================
+   FLOATING BUBBLES
+================================ */
+.floating-bubbles {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 999;
+}
+
+.floating-bubble {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 87, 255, 0.25);
+}
+
+.floating-bubble:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 20px rgba(0, 87, 255, 0.4);
+}
+
+.floating-bubble.whatsapp {
+    background: #25D366;
+}
+
+.floating-bubble.whatsapp:hover {
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.floating-bubble.instagram {
+    background: linear-gradient(135deg, #833AB4, #FD1D1D);
+}
+
+.floating-bubble.instagram:hover {
+    box-shadow: 0 6px 20px rgba(253, 29, 29, 0.4);
+}
+
+html.dark-mode .floating-bubble {
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
 }
